@@ -21,7 +21,7 @@
 <body>
     <div class="container">
         <h1>VidKit Terms of Service</h1>
-        <p class="date">Last Updated: March 3, 2026</p>
+        <p class="date">Last Updated: March 6, 2026</p>
 
         <h2>1. Acceptance of Terms</h2>
         <p>By downloading, installing, or using VidKit ("the App"), you agree to these Terms of Service. If you do not agree, do not use the App.</p>
@@ -58,15 +58,26 @@
         </ul>
 
         <h2>7. AI Features</h2>
-        <p>VidKit includes AI-powered features such as speech-to-text subtitles, face detection, and background removal. These features:</p>
+        <p>VidKit includes AI-powered features such as speech-to-text subtitles, face detection, background removal, depth estimation, and style transfer. These features run entirely on your device using the following open-source AI models:</p>
         <ul>
-            <li>Run entirely on your device using downloaded AI models</li>
-            <li>May produce imperfect results depending on input quality</li>
-            <li>Are provided "as-is" without guarantees of accuracy</li>
+            <li><strong>Whisper.cpp</strong> — Speech-to-text (MIT License)</li>
+            <li><strong>MediaPipe BlazeFace</strong> — Face detection (Apache 2.0 License)</li>
+            <li><strong>MediaPipe Selfie Segmenter</strong> — Background removal (Apache 2.0 License)</li>
+            <li><strong>MiDaS v2.1</strong> — Depth estimation (MIT License)</li>
+            <li><strong>TensorFlow Lite Style Transfer</strong> — Artistic style transfer (Apache 2.0 License)</li>
+            <li><strong>TensorFlow Lite Runtime</strong> — AI inference engine (Apache 2.0 License)</li>
+        </ul>
+        <p>By using these features, you acknowledge that:</p>
+        <ul>
+            <li>AI results may be imperfect depending on input quality</li>
+            <li>AI features are provided "as-is" without guarantees of accuracy</li>
+            <li>Some model files are downloaded on first use (Whisper from HuggingFace, MiDaS from GitHub)</li>
+            <li>All AI processing occurs on-device; no user content is transmitted for AI processing</li>
+            <li>These models are used under their respective open-source licenses (MIT / Apache 2.0)</li>
         </ul>
 
         <h2>8. Intellectual Property</h2>
-        <p>VidKit and its original content, features, and functionality are owned by VidKit and are protected by applicable intellectual property laws. Third-party libraries used in the App are subject to their respective open-source licenses.</p>
+        <p>VidKit and its original content, features, and functionality are owned by VidKit and are protected by applicable intellectual property laws. Third-party libraries and AI models used in the App are subject to their respective open-source licenses (MIT, Apache 2.0). Firebase Crashlytics and Analytics are used under Google's terms of service.</p>
 
         <h2>9. Disclaimer of Warranties</h2>
         <p>VidKit is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, or meet your specific requirements.</p>

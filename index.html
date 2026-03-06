@@ -22,10 +22,10 @@
 <body>
     <div class="container">
         <h1>VidKit Privacy Policy</h1>
-        <p class="date">Last Updated: March 3, 2026</p>
+        <p class="date">Last Updated: March 6, 2026</p>
 
         <div class="highlight">
-            <strong>Summary:</strong> VidKit processes all videos 100% on your device. We do not collect, store, transmit, or share any personal data or user content. Your videos never leave your phone.
+            <strong>Summary:</strong> VidKit processes all videos 100% on your device. Your videos never leave your phone. We use Firebase Crashlytics and Analytics (anonymous crash reports and aggregated usage data only). We do not collect, store, or share any personal data or user content.
         </div>
 
         <h2>1. Introduction</h2>
@@ -51,17 +51,24 @@
         </ul>
 
         <h2>4. AI Processing</h2>
-        <p>VidKit includes AI-powered features (speech-to-text subtitles, face detection, background segmentation). All AI processing is performed <strong>entirely on your device</strong> using downloaded AI models:</p>
+        <p>VidKit includes AI-powered features (speech-to-text subtitles, face detection, background segmentation, depth estimation, style transfer). All AI processing is performed <strong>entirely on your device</strong> using the following AI models:</p>
         <ul>
-            <li><strong>Whisper Speech-to-Text:</strong> AI model files (~75-142 MB) are downloaded once from HuggingFace (huggingface.co) and stored locally. Audio is transcribed entirely on-device. No audio data is sent to any server.</li>
-            <li><strong>MediaPipe (Face Detection & Segmentation):</strong> Model files are bundled within the app. All processing occurs on-device.</li>
+            <li><strong>Whisper.cpp</strong> (MIT License) — Speech-to-text subtitle generation. Model files (~75-142 MB) are downloaded once from HuggingFace (huggingface.co) and stored locally. Audio is transcribed entirely on-device. No audio data is sent to any server.</li>
+            <li><strong>MediaPipe BlazeFace</strong> (Apache 2.0 License) — On-device face detection. Model file (blaze_face_short_range.tflite) is bundled within the app.</li>
+            <li><strong>MediaPipe Selfie Segmenter</strong> (Apache 2.0 License) — Background removal / segmentation. Model file (selfie_segmenter.tflite) is bundled within the app.</li>
+            <li><strong>MiDaS v2.1</strong> (MIT License) — Depth estimation for 3D/depth effects. Model file (~63 MB) is downloaded once from GitHub and stored locally.</li>
+            <li><strong>TensorFlow Lite Style Transfer</strong> (Apache 2.0 License) — Artistic style transfer. Model files (style_predict.tflite + style_transfer.tflite, ~3.5 MB) are bundled within the app.</li>
+            <li><strong>TensorFlow Lite Runtime</strong> (Apache 2.0 License) — On-device AI inference engine used by the above models.</li>
         </ul>
+        <p>All models run entirely on your device. No video, audio, or image data is ever sent to any external server for AI processing.</p>
 
         <h2>5. Internet Usage</h2>
         <p>VidKit uses an internet connection only for the following purposes:</p>
         <ul>
-            <li><strong>AI Model Download:</strong> One-time download of Whisper speech-to-text model files from HuggingFace. Only the model file is downloaded; no user data is sent.</li>
+            <li><strong>AI Model Downloads:</strong> One-time download of Whisper speech-to-text model files from HuggingFace, and MiDaS depth estimation model from GitHub. Only the model files are downloaded; no user data is sent.</li>
             <li><strong>Google Play Billing:</strong> To process subscription purchases through Google Play. Purchase transactions are handled entirely by Google Play and are subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+            <li><strong>Firebase Crashlytics:</strong> Automatic crash reports are sent to Google Firebase to help us identify and fix bugs. Crash reports may include device model, OS version, stack traces, and app state at the time of the crash. No personal data or video content is included. Subject to <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</li>
+            <li><strong>Firebase Analytics:</strong> Anonymous, aggregated usage analytics (e.g., which features are used most) are collected by Google Firebase to help improve the app. No personally identifiable information or video content is collected. Subject to <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</li>
         </ul>
 
         <h2>6. Free Tier & Watermark</h2>
@@ -80,11 +87,15 @@
         <ul>
             <li><strong>Google Play Billing Library:</strong> For subscription management. Subject to Google's Privacy Policy.</li>
             <li><strong>Google Play In-App Review:</strong> For optional review prompts. No user data collected.</li>
-            <li><strong>MediaPipe (Google):</strong> For on-device AI inference. All processing is local; no data transmitted.</li>
-            <li><strong>Glide (BumpTech):</strong> For local image loading and caching. No network data collection.</li>
+            <li><strong>Firebase Crashlytics (Google):</strong> Crash reporting to help fix bugs. Sends crash data to Google servers. Subject to <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</li>
+            <li><strong>Firebase Analytics (Google):</strong> Anonymous usage analytics. Sends aggregated data to Google servers. Subject to <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</li>
+            <li><strong>MediaPipe (Google):</strong> For on-device face detection and segmentation. All processing is local; no data transmitted.</li>
+            <li><strong>MiDaS v2.1 (Intel ISL):</strong> For on-device depth estimation. Model downloaded once; all processing is local.</li>
+            <li><strong>TensorFlow Lite (Google):</strong> On-device AI inference runtime. All processing is local; no data transmitted.</li>
             <li><strong>Whisper.cpp:</strong> Open-source C++ library for on-device speech recognition. No data transmitted.</li>
+            <li><strong>Glide (BumpTech):</strong> For local image loading and caching. No network data collection.</li>
         </ul>
-        <p>None of these libraries collect, transmit, or share user data from VidKit.</p>
+        <p>Firebase Crashlytics and Analytics transmit anonymous diagnostic/usage data to Google. All other libraries operate entirely on-device and do not collect or transmit user data.</p>
 
         <h2>9. Data Security</h2>
         <ul>
